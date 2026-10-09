@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="A field guide to bees and honey: the colony, honey varietals, history, shop, membership and contact.">
+<title>Comb &amp; Cell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Figtree:wght@400;500;600;700&family=Gloock&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="#home" aria-label="Comb and Cell, home">
+      <svg class="brand-mark" viewBox="0 0 40 35" aria-hidden="true">
+        <polygon points="10,1 30,1 39,17.5 30,34 10,34 1,17.5" style="fill:var(--pollen)"/>
+        <polygon points="14,9 26,9 31,17.5 26,26 14,26 9,17.5" style="fill:var(--honey)"/>
+        <path d="M14 26 L26 26 L24 31 Q20 34 16 31 Z" style="fill:var(--honey)"/>
+      </svg>
+      <span>Comb <i>&amp;</i> Cell</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <nav class="nav" id="navLinks" aria-label="Main">
+      <a href="#bees" data-nav="bees">Bees</a>
+      <a href="#honey" data-nav="honey">Honey</a>
+      <a href="#history" data-nav="history">History</a>
+      <a href="#shop" data-nav="shop">Shop</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+      <a href="#login" data-nav="login">Log in</a>
+    </nav>
+    <div class="head-actions">
+      <button class="cart-btn" id="cartBtn" type="button" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="4" rx="1" fill="currentColor"/><path d="M6 8h12a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-9a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <a class="btn btn-sm btn-ink" href="#join"><span class="join-long">Join the hive</span><span class="join-short">Join</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HOME ============ -->
+<section class="page" data-page="home" id="page-home">
+  <div class="hero">
+    <canvas id="comb" aria-hidden="true"></canvas>
+    <div class="wrap hero-inner">
+      <span class="eyebrow">A field guide to bees &amp; honey</span>
+      <h1>Twelve bees, one teaspoon.</h1>
+      <p class="lede">A worker honey bee makes about a twelfth of a teaspoon of honey in her whole life. Learn how the colony pulls it off, where beekeeping began, and how a spring acacia tastes next to an autumn chestnut.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-ink" href="#bees">Meet the colony</a>
+        <a class="btn btn-line" href="#honey">How honey is made</a>
+      </div>
+    </div>
+    <div class="wrap">
+      <dl class="stats">
+        <div><dt>20,000+</dt><dd>known bee species</dd></div>
+        <div><dt>~2 million</dt><dd>flower visits per pound of honey</dd></div>
+        <div><dt>21 days</dt><dd>from egg to worker</dd></div>
+        <div><dt>35&nbsp;°C</dt><dd>brood nest temperature</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Inside this site</span>
+        <h2>Pick a cell</h2>
+      </div>
+      <ul class="index">
+        <li><a href="#bees"><h3>The colony</h3><p class="muted">Queen, workers and drones, the five jobs of a worker's life, and an interactive waggle dance.</p><span class="arrow">→</span></a></li>
+        <li><a href="#honey"><h3>Honey</h3><p class="muted">From nectar to capped cell, the Pfund colour scale, ten varietals and what else the hive makes.</p><span class="arrow">→</span></a></li>
+        <li><a href="#history"><h3>History</h3><p class="muted">Eight thousand years of people and bees, from a cave wall in Valencia to World Bee Day.</p><span class="arrow">→</span></a></li>
+        <li><a href="#shop"><h3>The honey shelf</h3><p class="muted">Jars of honey, cut comb, beeswax candles and hive adoptions.</p><span class="arrow">→</span></a></li>
+        <li><a href="#join"><h3>Join the hive</h3><p class="muted">Sign up for seasonal hive notes, recipes and apiary open days.</p><span class="arrow">→</span></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap split">
+      <div class="prose">
+        <span class="eyebrow">Spoon maths</span>
+        <h2>What's in your spoon?</h2>
+        <p class="lede">Slide to the amount of honey you stir into tea, bread or porridge. Each hexagon on the right is one worker's lifetime of honey.</p>
+        <p class="hint">Estimates from widely cited figures: 1/12 teaspoon per worker, about 2 million flower visits and 88,000&nbsp;km of flight per pound (454&nbsp;g), and 7&nbsp;g per teaspoon.</p>
+      </div>
+      <div class="calc">
+        <div class="calc-row">
+          <label for="spoons" style="font-weight:600">Teaspoons of honey</label>
+          <span class="big-val" id="spoonsVal">3</span>
+        </div>
+        <input type="range" id="spoons" min="1" max="48" value="3" aria-describedby="spoonsVal">
+        <div class="swarm" id="swarm" aria-hidden="true"></div>
+        <div class="calc-out">
+          <div><b id="outBees">36</b><span>bee lifetimes</span></div>
+          <div><b id="outFlowers">92,500</b><span>flower visits</span></div>
+          <div><b id="outKm">4,100 km</b><span>flown in total</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Seasonal note</span>
+        <h2>October in the apiary</h2>
+        <p class="lede">In the northern hemisphere the colony is shrinking and sealing itself in for winter.</p>
+      </div>
+      <ul class="season">
+        <li><span class="k">The last forage</span><h3>Ivy in flower</h3><p class="muted">Ivy blooms from September into November and is often the last big nectar and pollen flow of the year. Ivy honey sets hard in the comb within weeks.</p></li>
+        <li><span class="k">The colony</span><h3>Drones go out</h3><p class="muted">Workers stop feeding the males and push them out of the hive. Winter bees take over: they live four to six months instead of six weeks.</p></li>
+        <li><span class="k">The beekeeper</span><h3>Check the stores</h3><p class="muted">A colony in a temperate climate needs roughly 15–20&nbsp;kg of honey to last until spring. Mouse guards go on the entrance now.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEES ============ -->
+<section class="page" data-page="bees" id="page-bees" hidden>
+  <header class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">The colony</span>
+      <h1>Sixty thousand bodies, one animal</h1>
+      <p class="lede">A summer honey bee colony holds 20,000 to 60,000 bees. Almost all of them are sterile female workers. Together they behave so much like a single organism that biologists call the colony a superorganism.</p>
+    </div>
+  </header>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Three castes</span>
+        <h2>Queen, worker, drone</h2>
+        <p class="muted">Drawn to scale by typical body length.</p>
+      </div>
+      <div class="castes">
+        <article class="caste">
+          <div class="caste-fig" data-bee="20" data-kind="queen"></div>
+          <h3>Queen</h3>
+          <p class="muted">The only fertile female. She mates once, early in life, with 10–20 drones and stores the sperm for years.</p>
+          <dl class="facts">
+            <dt>Length</dt><dd>~20 mm</dd>
+            <dt>Lifespan</dt><dd>2–5 years</dd>
+            <dt>Egg to adult</dt><dd>16 days</dd>
+            <dt>Output</dt><dd>Up to ~1,500 eggs a day in peak season</dd>
+          </dl>
+        </article>
+        <article class="caste">
+          <div class="caste-fig" data-bee="13" data-kind="worker"></div>
+          <h3>Worker</h3>
+          <p class="muted">Female, sterile, and responsible for everything else: nursing, building, guarding and foraging.</p>
+          <dl class="facts">
+            <dt>Length</dt><dd>~13 mm</dd>
+            <dt>Lifespan</dt><dd>5–6 weeks in summer, 4–6 months in winter</dd>
+            <dt>Egg to adult</dt><dd>21 days</dd>
+            <dt>Output</dt><dd>~1/12 teaspoon of honey in a lifetime</dd>
+          </dl>
+        </article>
+        <article class="caste">
+          <div class="caste-fig" data-bee="16" data-kind="drone"></div>
+          <h3>Drone</h3>
+          <p class="muted">The males. No stinger, no pollen baskets. They exist to mate with queens from other colonies.</p>
+          <dl class="facts">
+            <dt>Length</dt><dd>~16 mm</dd>
+            <dt>Lifespan</dt><dd>Spring to autumn</dd>
+            <dt>Egg to adult</dt><dd>24 days</dd>
+            <dt>Output</dt><dd>Evicted by workers in autumn</dd>
+          </dl>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Development</span>
+        <h2>Egg, larva, pupa</h2>
+        <p class="muted">Days spent in each stage. Royal jelly for the whole larval stage is what makes a queen, and it makes her the fastest to develop.</p>
+      </div>
+      <div class="chart" id="devChart"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">A worker's career</span>
+        <h2>Five jobs in six weeks</h2>
+        <p class="muted">Workers change roles as their glands mature. Ages are typical summer days after emerging from the cell, and colonies shift them when they need to.</p>
+      </div>
+      <div class="career">
+        <div class="career-bar" id="careerBar" role="img" aria-label="Worker roles by age: cleaner days 1 to 2, nurse 3 to 11, builder 12 to 17, guard 18 to 21, forager 22 to about 42"></div>
+        <ol id="careerList"></ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="dance">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Waggle dance</span>
+        <h2>Directions, danced on the comb</h2>
+        <p class="muted">On the vertical comb inside the dark hive, "straight up" stands for the sun's direction. The angle of the waggle run tells the others which way to fly, and its length tells them how far. Karl von Frisch decoded it and shared a Nobel Prize for it in 1973.</p>
+      </div>
+      <div class="waggle">
+        <canvas id="waggle" width="640" height="480" aria-label="Animated waggle dance"></canvas>
+        <div class="stack" style="display:flex;flex-direction:column;gap:1.3rem">
+          <div class="ctrl">
+            <label for="wAngle">Flowers relative to the sun <output id="wAngleOut" for="wAngle">40°</output></label>
+            <input type="range" id="wAngle" min="-180" max="180" step="5" value="40">
+          </div>
+          <div class="ctrl">
+            <label for="wDist">Distance to the flowers <output id="wDistOut" for="wDist">1.2 km</output></label>
+            <input type="range" id="wDist" min="100" max="5000" step="100" value="1200">
+          </div>
+          <div class="readout" aria-live="polite">
+            <span class="eyebrow">What the dancers read</span>
+            <strong id="wRead">Fly 40° right of the sun for about 1.2 km.</strong>
+            <span class="muted" id="wSub">Waggle run ≈ 1.2 s, repeated with alternating return loops.</span>
+          </div>
+          <p class="hint">The timing is a rule of thumb: about one second of waggling per kilometre. Below roughly 50–100&nbsp;m, foragers do a round dance that carries no direction.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Field figures</span><h2>Bee by the numbers</h2></div>
+      <div class="factgrid">
+        <div><b>~230/s</b><span>wingbeats, which make the buzz</span></div>
+        <div><b>5</b><span>eyes: two compound eyes and three ocelli</span></div>
+        <div><b>~25 km/h</b><span>cruising flight speed</span></div>
+        <div><b>3 km</b><span>typical foraging radius, sometimes far more</span></div>
+        <div><b>~40 mg</b><span>nectar in a full honey stomach</span></div>
+        <div><b>UV</b><span>bees see ultraviolet, but not red</span></div>
+        <div><b>4 pairs</b><span>of wax glands under a worker's abdomen</span></div>
+        <div><b>~12</b><span>species of honey bee, out of 20,000+ bees</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HONEY ============ -->
+<section class="page" data-page="honey" id="page-honey" hidden>
+  <header class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">Honey</span>
+      <h1>Nectar, minus most of the water</h1>
+      <p class="lede">Honey is flower nectar that bees have concentrated, enzymed and sealed in wax. The flower decides the colour and flavour; the bees decide the chemistry.</p>
+    </div>
+  </header>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">The process</span><h2>From flower to capped cell</h2></div>
+      <ol class="steps">
+        <li><h4>Forage</h4><p>A forager sips nectar through her tongue into her honey stomach, visiting hundreds of flowers per trip.</p></li>
+        <li><h4>Add enzymes</h4><p>Invertase from her glands starts splitting sucrose into glucose and fructose while she flies home.</p></li>
+        <li><h4>Hand over</h4><p>House bees take the nectar mouth to mouth, a transfer called trophallaxis, and add more enzymes.</p></li>
+        <li><h4>Evaporate</h4><p>Nectar is spread thin in cells while bees fan their wings to drive the water off.</p></li>
+        <li><h4>Cap</h4><p>When water drops to about 17–18%, workers seal the cell with a lid of fresh wax.</p></li>
+      </ol>
+      <div class="water" role="img" aria-label="Water content: nectar often 60 to 80 percent, honey about 17 percent">
+        <h4>Water content</h4>
+        <div class="brow"><span class="nm">Nectar</span><div class="track"><div class="fill" style="width:80%;opacity:.45"></div></div><span class="tot mono">60–80%</span></div>
+        <div class="brow"><span class="nm">Honey</span><div class="track"><div class="fill" style="width:17%"></div></div><span class="tot mono">~17%</span></div>
+        <p class="hint">At this concentration few microbes can grow, which is why sealed honey keeps for decades.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Colour grading</span>
+        <h2>The Pfund scale</h2>
+        <p class="muted">Honey colour is graded in millimetres on a Pfund grader, which compares a wedge of honey against an amber glass standard. Lighter honeys tend to taste milder.</p>
+      </div>
+      <div class="pfund">
+        <div class="pfund-bar" id="pfundBar"></div>
+        <div class="pfund-ticks" id="pfundTicks"></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Varietal</th><th>Typical Pfund</th><th>Class</th><th>Flavour</th><th>Crystallizes</th></tr></thead>
+          <tbody id="varTable"></tbody>
+        </table>
+      </div>
+      <p class="hint" style="margin-top:.8rem">Typical readings. Every harvest differs with weather, soil and whatever else was in bloom.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Beyond honey</span><h2>What else the hive makes</h2></div>
+      <div class="products4">
+        <div><span class="hx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10l5 9-5 9H7l-5-9z" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Beeswax</h3><p class="muted">Workers around 12–17 days old secrete it as flakes from glands on their abdomen. Bees eat several kilograms of honey to make one kilogram of wax.</p></div>
+        <div><span class="hx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 5 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-6 6-11z" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Propolis</h3><p class="muted">"Bee glue": tree resins mixed with wax. Bees use it to seal cracks and coat the inside of the hive, and it has antimicrobial properties.</p></div>
+        <div><span class="hx"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg></span><h3>Royal jelly</h3><p class="muted">A protein-rich secretion from nurse bees' head glands. Every larva gets it for about three days; a future queen gets it for her whole development.</p></div>
+        <div><span class="hx"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="3" fill="currentColor"/><circle cx="15" cy="8" r="2.5" fill="currentColor"/><circle cx="12" cy="15" r="3.5" fill="currentColor"/></svg></span><h3>Bee bread</h3><p class="muted">Pollen packed into cells with nectar and left to ferment. It is the colony's main protein source and feeds the nurse bees.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">In the kitchen</span><h2>Keeping honey well</h2></div>
+      <div class="notes">
+        <div class="note"><h4>It set solid. Is it off?</h4><p class="muted">No. Crystallizing is natural and happens faster in glucose-rich honey like rapeseed. Stand the jar in warm water around 40&nbsp;°C to make it runny again.</p></div>
+        <div class="note"><h4>Where to store it</h4><p class="muted">At room temperature, lid on tight. Honey pulls moisture from the air, and wet honey can ferment. Cool spots around 10–15&nbsp;°C speed up crystallizing.</p></div>
+        <div class="note warn"><h4>Not for babies under 12 months</h4><p class="muted">Honey can carry spores of <i>Clostridium botulinum</i>, which an infant's gut can't yet handle. This applies to raw and pasteurized honey and to baked goods made with it.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HISTORY ============ -->
+<section class="page" data-page="history" id="page-history" hidden>
+  <header class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">History</span>
+      <h1>Eight thousand years of sweetness</h1>
+      <p class="lede">People robbed wild nests long before anyone kept bees. The story runs from cliff faces to clay cylinders, straw skeps and the wooden box most beekeepers still use.</p>
+    </div>
+  </header>
+  <div class="section">
+    <div class="wrap">
+      <ol class="timeline">
+        <li><span class="when">c. 8,000 years ago</span><div class="what"><span class="where">Cuevas de la Araña, Valencia, Spain</span><h3>A honey hunter on a cave wall</h3><p class="muted">A rock painting shows a figure climbing ropes or vines to a wild nest, holding a basket, with bees flying around. It is one of the oldest known images of honey gathering.</p></div></li>
+        <li><span class="when">c. 5,500 years ago</span><div class="what"><span class="where">Borjomi, Georgia</span><h3>The oldest honey ever found</h3><p class="muted">Archaeologists found traces of honey in ceramic jars placed in a tomb, apparently left for the afterlife journey.</p></div></li>
+        <li><span class="when">c. 2400 BCE</span><div class="what"><span class="where">Abu Ghurob, Egypt</span><h3>Beekeeping carved in stone</h3><p class="muted">Reliefs in the sun temple of King Nyuserre show workers blowing smoke into horizontal hives and pouring honey into jars. Egyptians kept bees in stacked pipes of mud and clay.</p></div></li>
+        <li><span class="when">c. 900 BCE</span><div class="what"><span class="where">Tel Rehov, Jordan Valley</span><h3>The first apiary we can dig up</h3><p class="muted">Rows of unfired clay cylinder hives, some still holding wax and bee remains. Researchers estimate the site held around a hundred hives or more.</p></div></li>
+        <li><span class="when">4th c. BCE</span><div class="what"><span class="where">Greece</span><h3>Aristotle watches the hive</h3><p class="muted">His <i>History of Animals</i> describes bee behaviour in detail, though he assumed the colony's leader was a king.</p></div></li>
+        <li><span class="when">29 BCE</span><div class="what"><span class="where">Rome</span><h3>Virgil's beekeeping poem</h3><p class="muted">Book IV of the <i>Georgics</i> is a practical and poetic guide to keeping bees, from siting hives to handling swarms.</p></div></li>
+        <li><span class="when">Middle Ages</span><div class="what"><span class="where">Europe</span><h3>Skeps, monks and mead</h3><p class="muted">Woven straw skeps spread across Europe. Monasteries kept bees for church candles of beeswax and brewed honey into mead. Harvesting often meant destroying the colony.</p></div></li>
+        <li><span class="when">1609</span><div class="what"><span class="where">England</span><h3>The king is a queen</h3><p class="muted">Charles Butler's <i>The Feminine Monarchie</i> argued that the colony's leader is female. Jan Swammerdam later confirmed it by dissection.</p></div></li>
+        <li><span class="when">1622</span><div class="what"><span class="where">Virginia colony</span><h3>Honey bees reach North America</h3><p class="muted">European honey bees arrived with colonists. Before then the Americas had many native bees, but no honey bees.</p></div></li>
+        <li><span class="when">1851</span><div class="what"><span class="where">Philadelphia, USA</span><h3>Bee space and the movable frame</h3><p class="muted">Lorenzo Langstroth noticed bees leave a gap of about 6–9&nbsp;mm untouched. Hanging frames with exactly that spacing meant combs could be lifted out without killing the colony. He patented the hive in 1852.</p></div></li>
+        <li><span class="when">1865</span><div class="what"><span class="where">Italy</span><h3>The centrifugal extractor</h3><p class="muted">Franz von Hruschka spun honey out of uncapped combs, so the empty comb could go back to the bees to refill.</p></div></li>
+        <li><span class="when">1973</span><div class="what"><span class="where">Stockholm</span><h3>A Nobel for the dance</h3><p class="muted">Karl von Frisch shared the Nobel Prize in Physiology or Medicine for work including decoding the waggle dance.</p></div></li>
+        <li><span class="when">2006</span><div class="what"><span class="where">United States</span><h3>Colony collapse disorder</h3><p class="muted">Beekeepers reported hives emptying almost overnight, and the problem got a name. Research since points to a mix of causes: varroa mites and the viruses they spread, pesticides and poor nutrition.</p></div></li>
+        <li><span class="when">2018</span><div class="what"><span class="where">Worldwide</span><h3>The first World Bee Day</h3><p class="muted">The United Nations set 20 May, the birthday of Slovenian beekeeping pioneer Anton Janša, as a day to highlight pollinators.</p></div></li>
+      </ol>
+    </div>
+  </div>
+  <div class="section">
+    <div class="wrap split">
+      <p class="pullquote">About a third of the food we eat depends to some degree on animal pollination.</p>
+      <div class="prose"><p class="muted">Honey bees get most of the attention, but most pollination is done by wild bees, flies, moths and beetles. Bumblebees buzz tomatoes into releasing pollen; mason bees work fruit blossom in cold spring weather when honey bees stay home. Planting a mix of flowers that bloom from early spring to late autumn helps all of them.</p><a class="btn btn-honey" href="#join" style="align-self:flex-start">Get seasonal planting notes</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOP ============ -->
+<section class="page" data-page="shop" id="page-shop" hidden>
+  <header class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">The honey shelf</span>
+      <h1>From our hives to your toast</h1>
+      <p class="lede">Single-flower and wildflower honeys, comb sections and beeswax, all priced in euros.</p>
+    </div>
+  </header>
+  <div class="section">
+    <div class="wrap">
+      <div class="shop-filters" role="group" aria-label="Filter products">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-filter="honey" aria-pressed="false">Honey</button>
+        <button class="chip" type="button" data-filter="comb" aria-pressed="false">Comb</button>
+        <button class="chip" type="button" data-filter="wax" aria-pressed="false">Beeswax</button>
+        <button class="chip" type="button" data-filter="gift" aria-pressed="false">Gifts</button>
+      </div>
+      <div class="grid-shop" id="shopGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOIN ============ -->
+<section class="page" data-page="join" id="page-join" hidden>
+  <div class="section">
+    <div class="wrap form-shell">
+      <div class="prose">
+        <span class="eyebrow">Membership</span>
+        <h1 style="font-size:clamp(2.4rem,5.5vw,3.8rem)">Join the hive</h1>
+        <p class="lede">Get a short note from the apiary each season: what's in bloom, what the bees are doing and what to plant.</p>
+        <ul class="perks">
+          <li><div><h4>Seasonal hive notes</h4><p class="muted">Four letters a year, timed to the beekeeping calendar.</p></div></li>
+          <li><div><h4>First taste of new harvests</h4><p class="muted">Members hear about small-batch honeys before they go on the shelf.</p></div></li>
+          <li><div><h4>Apiary open days</h4><p class="muted">Suit up and open a hive with a beekeeper, May to September.</p></div></li>
+        </ul>
+      </div>
+      <div class="panel" id="joinPanel">
+        <form id="joinForm" novalidate>
+          <div class="row2">
+            <div class="field"><label for="jName">First name</label><input type="text" id="jName" autocomplete="given-name" placeholder="Maya"><span class="err" id="jNameErr"></span></div>
+            <div class="field"><label for="jEmail">Email</label><input type="email" id="jEmail" autocomplete="email" placeholder="maya@example.com"><span class="err"></span></div>
+          </div>
+          <div class="field">
+            <label for="jPass">Password</label>
+            <input type="password" id="jPass" autocomplete="new-password" aria-describedby="jPassHint">
+            <div class="meter" id="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><span id="meterLbl">At least 8 characters</span></div>
+            <span class="hint" id="jPassHint">Mix upper and lower case, numbers and symbols for a stronger password.</span>
+            <span class="err"></span>
+          </div>
+          <fieldset>
+            <legend class="legend-t">Membership</legend>
+            <div class="tiers">
+              <label class="tier"><input type="radio" name="tier" id="tForager" value="Forager" checked><span class="t">Forager</span><span class="p">Free</span><span class="d">Seasonal notes by email</span></label>
+              <label class="tier"><input type="radio" name="tier" id="tNurse" value="Nurse"><span class="t">Nurse</span><span class="p">€4 / month</span><span class="d">Plus a jar each season</span></label>
+              <label class="tier"><input type="radio" name="tier" id="tQueen" value="Queen's Court"><span class="t">Queen's Court</span><span class="p">€9 / month</span><span class="d">Plus open days and an adopted hive</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend class="legend-t">I'm interested in</legend>
+            <div class="checks">
+              <label class="check"><input type="checkbox" id="iBasics" checked> Beekeeping basics</label>
+              <label class="check"><input type="checkbox" id="iRecipes"> Honey recipes</label>
+              <label class="check"><input type="checkbox" id="iGarden" checked> Pollinator gardening</label>
+              <label class="check"><input type="checkbox" id="iMead"> Mead making</label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label class="check"><input type="checkbox" id="jTerms"> I agree to receive hive notes by email. Unsubscribe any time.</label>
+            <span class="err"></span>
+          </div>
+          <button class="btn btn-ink btn-block" type="submit">Create account</button>
+          <p class="hint" style="text-align:center">Already a member? <a href="#login">Log in</a></p>
+        </form>
+        <div class="success" id="joinDone" hidden>
+          <span class="hxbig"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#211909" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h2 id="joinHello">Welcome to the hive</h2>
+          <p class="muted" id="joinSummary"></p>
+          <p class="inline-msg">Your first hive notes arrive with the change of season.</p>
+          <div style="display:flex;gap:.6rem;flex-wrap:wrap"><a class="btn btn-ink" href="#bees">Start with the colony</a><button class="btn btn-line" type="button" id="joinAgain">Fill in again</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOGIN ============ -->
+<section class="page" data-page="login" id="page-login" hidden>
+  <div class="section">
+    <div class="wrap" style="max-width:32rem">
+      <div class="panel">
+        <div style="display:flex;flex-direction:column;gap:.5rem">
+          <span class="eyebrow">Members</span>
+          <h1 style="font-size:2.6rem">Log in</h1>
+        </div>
+        <form id="loginForm" novalidate>
+          <div class="field"><label for="lEmail">Email</label><input type="email" id="lEmail" autocomplete="email"><span class="err"></span></div>
+          <div class="field">
+            <div style="display:flex;justify-content:space-between;gap:1rem;align-items:baseline"><label for="lPass" style="font-weight:600;font-size:.95rem">Password</label><button type="button" class="linkbtn" id="forgotBtn" style="font-size:.88rem">Forgot password?</button></div>
+            <input type="password" id="lPass" autocomplete="current-password"><span class="err"></span>
+          </div>
+          <label class="check"><input type="checkbox" id="lRemember"> Keep me logged in on this device</label>
+          <button class="btn btn-ink btn-block" type="submit">Log in</button>
+        </form>
+        <div class="inline-msg" id="loginMsg" hidden></div>
+        <form id="forgotForm" novalidate hidden>
+          <div class="field"><label for="fEmail">Email for the reset link</label><input type="email" id="fEmail" autocomplete="email"><span class="err"></span></div>
+          <button class="btn btn-line btn-block" type="submit">Send reset link</button>
+        </form>
+        <div class="or">new here?</div>
+        <a class="btn btn-honey btn-block" href="#join">Join the hive</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="page" data-page="contact" id="page-contact" hidden>
+  <header class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">Contact</span>
+      <h1>Talk to the beekeepers</h1>
+      <p class="lede">Questions about honey, wholesale orders, hive adoptions, or a swarm hanging off your fence. We usually reply within two working days.</p>
+    </div>
+  </header>
+  <div class="section">
+    <div class="wrap form-shell">
+      <div class="contact-info">
+        <div class="info-block"><span class="k">The apiary</span><p>Strada dei Favi 7<br>Località Fiorbianco<br>Open days: Saturdays, May–September</p></div>
+        <div class="info-block"><span class="k">Shop hours</span><p>Tuesday–Saturday, 9:00–17:00</p></div>
+        <div class="info-block"><span class="k">Email</span><div class="copyrow"><code id="mailAddr">hello@combandcell.example</code><button class="btn btn-sm btn-line" type="button" id="copyMail">Copy</button></div></div>
+        <div class="info-block"><span class="k">Swarm line, April–July</span><div class="copyrow"><code>+39 000 000 0000</code></div><p class="hint">Keep pets and children away from the cluster and don't spray it. Swarming bees are usually calm.</p></div>
+      </div>
+      <div class="panel">
+        <form id="contactForm" novalidate>
+          <div class="row2">
+            <div class="field"><label for="cName">Name</label><input type="text" id="cName" autocomplete="name"><span class="err"></span></div>
+            <div class="field"><label for="cEmail">Email</label><input type="email" id="cEmail" autocomplete="email"><span class="err"></span></div>
+          </div>
+          <div class="field">
+            <label for="cTopic">Topic</label>
+            <select id="cTopic">
+              <option value="">Choose one</option>
+              <option>A question about honey</option>
+              <option>Swarm in my garden</option>
+              <option>Wholesale and restaurants</option>
+              <option>Hive adoption</option>
+              <option>Apiary open days</option>
+              <option>Something else</option>
+            </select>
+            <span class="err"></span>
+          </div>
+          <div class="field">
+            <label for="cMsg">Message</label>
+            <textarea id="cMsg" maxlength="800" placeholder="Tell us what you need."></textarea>
+            <span class="hint mono" id="cCount">0 / 800</span>
+            <span class="err"></span>
+          </div>
+          <button class="btn btn-ink btn-block" type="submit">Send message</button>
+          <p class="hint" style="text-align:center">We usually reply within two working days.</p>
+        </form>
+        <div class="success" id="contactDone" hidden>
+          <span class="hxbig"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#211909" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h2>Thanks for writing</h2>
+          <p class="muted" id="contactSummary"></p>
+          <button class="btn btn-line" type="button" id="contactAgain">Write another</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Before you write</span><h2>Common questions</h2></div>
+      <div class="faq">
+        <details><summary>There's a swarm of bees in my garden. What should I do?</summary><p>Stay calm and keep your distance. A swarm is a colony looking for a new home and the bees are full of honey and rarely sting. Don't spray or disturb them. Call a local beekeeping association or swarm collector; many will collect for free.</p></details>
+        <details><summary>Why has my honey gone solid?</summary><p>All real honey crystallizes eventually; it's the glucose forming crystals. Stand the jar in warm water (about 40&nbsp;°C) and stir until it's runny. Avoid the microwave, which overheats it.</p></details>
+        <details><summary>Is raw honey safe for babies?</summary><p>No honey of any kind should be given to babies under 12 months, because of the risk of infant botulism.</p></details>
+        <details><summary>What does adopting a hive mean?</summary><p>You sponsor one colony for a year. You get photos and notes from inspections, a jar from your hive's harvest, and an invitation to an open day to meet them.</p></details>
+        <details><summary>Can I visit the apiary?</summary><p>Yes, on open days. We provide suits and veils. Wear long trousers and closed shoes, and skip perfume.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div style="display:flex;flex-direction:column;gap:.8rem">
+      <a class="brand" href="#home"><span>Comb <i>&amp;</i> Cell</span></a>
+      <p style="opacity:.8;max-width:34ch">A field guide to bees and honey, from the hive to your table.</p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="#bees">The colony</a></li>
+      <li><a href="#honey">Honey</a></li>
+      <li><a href="#history">History</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#join">Join</a></li>
+      <li><a href="#login">Log in</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#dance" id="footDance">Waggle dance</a></li>
+    </ul>
+    <div class="foot-news">
+      <h4>Hive notes, four times a year</h4>
+      <form id="newsForm" novalidate>
+        <label for="nEmail" class="hint" style="position:absolute;left:-9999px">Email for hive notes</label>
+        <input type="email" id="nEmail" placeholder="you@example.com" autocomplete="email">
+        <button class="btn btn-honey btn-sm" type="submit">Subscribe</button>
+        <span class="err"></span>
+      </form>
+    </div>
+  </div>
+  <div class="wrap foot-base"><span>© 2026 Comb &amp; Cell</span><span>Made for the bees</span></div>
+</footer>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-label="Cart" aria-modal="true" role="dialog">
+  <div class="drawer-head"><h3>Your cart</h3><button class="x" type="button" id="closeCart" aria-label="Close cart">×</button></div>
+  <ul class="drawer-list" id="cartList"></ul>
+  <div class="drawer-foot">
+    <div class="total"><span>Total</span><span id="cartTotal">€0.00</span></div>
+    <div class="inline-msg" id="checkoutMsg" hidden>Online orders open next spring. Until then, every jar is at the apiary shop, Tuesday to Saturday.</div>
+    <button class="btn btn-ink btn-block" type="button" id="checkoutBtn">Checkout</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
